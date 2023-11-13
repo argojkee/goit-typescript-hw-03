@@ -7,7 +7,6 @@ interface IPerson {
 }
 
 interface IHouse {
-  door: boolean;
   key: IKey;
   tenants: IPerson[];
   comeIn(person: IPerson): void;
@@ -34,7 +33,7 @@ class Person implements IPerson {
 }
 
 abstract class House implements IHouse {
-  door: boolean = false;
+  protected door: boolean = false;
   tenants: IPerson[] = [];
 
   constructor(public key: IKey) {
